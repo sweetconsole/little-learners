@@ -1,0 +1,23 @@
+@use "./variables";
+@use "./mixins";
+@import "https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap";
+
+* {
+  font-family: "Times New Roman", serif;
+  font-size: 24px;
+  color: red;
+}
+
+*::selection {
+  color: variables.$color-white;
+  background-color: variables.$color-accent-65;
+}
+
+.container {
+  @include mixins.resize("padding-top", 18, 16, 40);
+  @include mixins.resize("padding-left", 50, 50, 16);
+  @include mixins.resize("padding-right", 50, 50, 16);
+  @include mixins.resize("padding-bottom", 50, 40, 20);
+
+  background-color: variables.$color-accent-97;
+}

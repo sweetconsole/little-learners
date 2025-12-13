@@ -1,0 +1,11 @@
+@use "./assets/styles/variables";
+@use "./assets/styles/mixins";
+
+.container {
+  @include mixins.resize("padding-top", 18, 16, 40);
+  @include mixins.resize("padding-left", 50, 50, 16);
+  @include mixins.resize("padding-right", 50, 50, 16);
+  @include mixins.resize("padding-bottom", 50, 40, 20);
+
+  background-color: variables.$color-accent-97;
+}

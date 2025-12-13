@@ -1,0 +1,13 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins";
+
+.header {
+  @include mixins.resize("top", 18, 16, 40);
+  @include mixins.resize("gap", 14, 14, 14);
+
+  position: sticky;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+}

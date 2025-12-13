@@ -1,0 +1,45 @@
+@use "./variables";
+@use "./functions";
+@use "./adaptive";
+
+@mixin resize-desktop($property, $template) {
+  @include adaptive.desktop {
+    :global(.landscape-desktop) &{
+      #{$property}: functions.to-vh-desktop($template);
+    }
+
+    :global(.portrait-desktop) &{
+      #{$property}: functions.to-vw-desktop($template);
+    }
+  }
+}
+
+@mixin resize-laptop($property, $template) {
+  @include adaptive.laptop {
+    :global(.landscape-laptop) &{
+      #{$property}: functions.to-vh-laptop($template);
+    }
+
+    :global(.portrait-laptop) &{
+      #{$property}: functions.to-vw-laptop($template);
+    }
+  }
+}
+
+@mixin resize-mobile($property, $template) {
+  @include adaptive.mobile {
+    :global(.landscape-mobile) &{
+       #{$property}: functions.to-vh-mobile($template);
+    }
+
+    :global(.portrait-mobile) &{
+       #{$property}: functions.to-vw-mobile($template);
+    }
+  }
+}
+
+@mixin resize($property, $desktop, $laptop, $mobile) {
+  @include resize-desktop($property, $desktop);
+  @include resize-laptop($property, $laptop);
+  @include resize-mobile($property, $mobile);
+}

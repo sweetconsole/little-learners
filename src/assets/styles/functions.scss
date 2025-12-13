@@ -1,0 +1,25 @@
+@use "./variables";
+
+@function to-vw-desktop($value) {
+  @return 100vw * calc($value / variables.$width-template-desktop);
+}
+
+@function to-vh-desktop($value) {
+  @return 100vh * calc($value / variables.$height-template-desktop);
+}
+
+@function to-vw-laptop($value) {
+  @return 100vw * calc($value / variables.$width-template-laptop);
+}
+
+@function to-vh-laptop($value) {
+  @return 100vh * calc($value / variables.$height-template-laptop);
+}
+
+@function to-vw-mobile($value) {
+  @return 100vw * calc($value / variables.$width-template-mobile);
+}
+
+@function to-vh-mobile($value) {
+  @return 100vh * calc($value / variables.$height-template-mobile);
+}

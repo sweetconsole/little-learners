@@ -1,0 +1,108 @@
+@use "../../../../assets/styles/variables";
+@use "../../../../assets/styles/mixins";
+
+.navbar {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: variables.$color-white;
+
+  &::after {
+    @include mixins.resize("border-width", 3, 3, 2);
+    @include mixins.resize("border-radius", 8, 6, 6);
+
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    content: "";
+    border-color: variables.$color-primary-15;
+    border-style: solid;
+  }
+}
+
+.logo {
+  @include mixins.resize("padding-top", 20, 16, 16);
+  @include mixins.resize("padding-bottom", 20, 16, 16);
+  @include mixins.resize("padding-left", 24, 20, 20);
+  @include mixins.resize("padding-right", 24, 20, 20);
+  @include mixins.resize("border-right-width", 3, 3, 2);
+  @include mixins.resize("border-top-left-radius", 8, 6, 6);
+  @include mixins.resize("border-bottom-left-radius", 8, 6, 6);
+
+  position: relative;
+  z-index: -1;
+  background-color: variables.$color-accent-65;
+  border-color: variables.$color-primary-15;
+  border-style: solid;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+}
+
+.logo_image {
+  @include mixins.resize("width", 182.69, 155.29, 137.02);
+  @include mixins.resize("height", 40, 34, 30);
+}
+
+.navigation {
+  display: flex;
+}
+
+.link,
+.link_selected,
+.link_accent {
+  @include mixins.resize("padding-top", 27, 20, 20);
+  @include mixins.resize("padding-bottom", 27, 20, 20);
+  @include mixins.resize("padding-left", 34, 30, 30);
+  @include mixins.resize("padding-right", 34, 30, 30);
+  @include mixins.resize("border-left-width", 3, 3, 2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-color: variables.$color-primary-15;
+  border-style: solid;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  transition: all .2s ease-in-out;
+
+  a {
+    @include mixins.resize("font-size", 20, 16, 14);
+
+    font-family: variables.$font-family-primary;
+    font-weight: variables.$font-weight-medium;
+    line-height: 150%;
+    color: variables.$color-primary-15;
+  }
+}
+
+.link {
+  &:hover {
+    background-color: variables.$color-accent-95;
+  }
+
+  &:active {
+    background-color: variables.$color-accent-75;
+  }
+}
+
+.link_selected {
+  background-color: variables.$color-accent-95;
+}
+
+.link_accent {
+  @include mixins.resize("border-top-right-radius", 8, 6, 6);
+  @include mixins.resize("border-bottom-right-radius", 8, 6, 6);
+
+  background-color: variables.$color-accent-75;
+
+  &:hover {
+    background-color: variables.$color-accent-65;
+  }
+}
