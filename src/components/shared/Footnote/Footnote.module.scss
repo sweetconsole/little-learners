@@ -1,0 +1,24 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins";
+
+.footnote {
+  @include mixins.resize("padding-top", 10, 8, 8);
+  @include mixins.resize("padding-bottom", 10, 8, 8);
+  @include mixins.resize("padding-left", 20, 14, 14);
+  @include mixins.resize("padding-right", 20, 14, 14);
+  @include mixins.resize("border-radius", 8, 6, 6);
+  @include mixins.resize("margin-bottom", 19, 14, 10);
+
+  display: inline-block;
+  background-color: variables.$color-white;
+  border: 2px solid variables.$color-black;
+}
+
+.title {
+  @include mixins.resize("font-size", 18, 16, 14);
+
+  font-family: variables.$font-family-primary;
+  font-weight: variables.$font-weight-medium;
+  line-height: 150%;
+  color: variables.$color-primary-20;
+}

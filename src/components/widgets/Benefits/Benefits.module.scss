@@ -1,0 +1,9 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins";
+@use "../../../assets/styles/adaptive";
+
+.block {
+  @include mixins.resize("margin-top", 200, 150, 80);
+
+  text-align: center;
+}

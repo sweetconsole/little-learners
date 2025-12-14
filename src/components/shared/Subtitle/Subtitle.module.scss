@@ -1,0 +1,14 @@
+@use "../../../assets/styles/variables";
+@use "../../../assets/styles/mixins";
+
+.text {
+  @include mixins.resize("max-width", 992, 880, 358);
+  @include mixins.resize("font-size", 20, 16, 16);
+
+  width: 100%;
+  margin: 0 auto;
+  font-family: variables.$font-family-primary;
+  font-weight: variables.$font-weight-medium;
+  line-height: 150%;
+  color: variables.$color-primary-20;
+}
