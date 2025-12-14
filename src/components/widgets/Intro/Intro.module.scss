@@ -20,11 +20,6 @@
   }
 }
 
-.image {
-  @include mixins.resize("width", 765, 615, 358);
-  @include mixins.resize("height", 785, 663, 410);
-}
-
 .info {
   @include adaptive.mobile {
     text-align: center;

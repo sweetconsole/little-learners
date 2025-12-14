@@ -1,7 +1,8 @@
 import { type FC } from "react"
 import { Link, useLocation } from "react-router-dom"
-import Logo from "../../../../assets/images/logo.svg"
 import { pagesConfig } from "../../../../utils/pages.config.ts"
+import { Picture } from "../../../shared"
+import { Logo } from "../header.data.ts"
 import styles from "./NavBar.module.scss"
 
 const NavBar: FC = () => {
@@ -18,7 +19,7 @@ const NavBar: FC = () => {
 	return (
 		<div className={styles.navbar}>
 			<div className={styles.logo}>
-				<img className={styles.logo_image} src={Logo} alt="" />
+				<Picture className={styles.logo_image} assets={Logo} />
 			</div>
 
 			<nav className={styles.navigation}>
@@ -41,6 +42,14 @@ const NavBar: FC = () => {
 					<Link to={pagesConfig.contact}>Contact</Link>
 				</div>
 			</nav>
+
+			<div className={styles.menu}>
+				<button className={styles.menu_button}>
+					<div></div>
+					<div></div>
+					<div></div>
+				</button>
+			</div>
 		</div>
 	)
 }

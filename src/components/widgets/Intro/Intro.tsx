@@ -1,11 +1,12 @@
 import { type FC } from "react"
 import Statistics from "./Statistics/Statistics.tsx"
+import Image from "./Image/Image.jsx"
 import styles from "./Intro.module.scss"
 
 const Intro: FC = () => {
 	return (
 		<section className={styles.intro}>
-			<img className={styles.image} />
+			<Image />
 
 			<div className={styles.info}>
 				<p className={styles.suptitle}>Welcome to Little Learners Academy</p>
