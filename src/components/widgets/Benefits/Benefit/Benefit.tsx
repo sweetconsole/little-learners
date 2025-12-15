@@ -1,9 +1,9 @@
 import { type FC } from "react"
 import { Picture } from "../../../shared"
-import { type Benefit } from "../benefits.data.ts"
+import { type Benefit as BenefitType } from "../benefits.data.ts"
 import styles from "./Benefit.module.scss"
 
-const Benefit: FC<Benefit> = ({ icon, title, description }) => {
+const Benefit: FC<BenefitType> = ({ icon, title, description }) => {
 	return (
 		<div className={styles.benefit}>
 			<div className={styles.icon_container}>
