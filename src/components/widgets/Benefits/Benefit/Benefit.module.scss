@@ -1,0 +1,55 @@
+@use "../../../../assets/styles/variables";
+@use "../../../../assets/styles/mixins";
+@use "../../../../assets/styles/adaptive";
+
+.benefit {
+  @include mixins.resize("border-radius", 12, 10, 10);
+
+  position: relative;
+  width: 100%;
+  text-align: left;
+  background-color: variables.$color-white;
+  border: 2px solid variables.$color-primary-15;
+}
+
+.icon_container {
+  @include mixins.resize("padding", 20, 16, 16);
+  @include mixins.resize("left", 30, 24, 24);
+  @include mixins.resize("border-radius", 12, 8, 8);
+
+  position: absolute;
+  top: -12.5%;
+  background-color: variables.$color-accent-90;
+  border: 2px solid variables.$color-primary-15;
+}
+
+.icon {
+  @include mixins.resize("width", 34, 24, 24);
+  @include mixins.resize("height", 34, 24, 24);
+}
+
+.info {
+  @include mixins.resize("padding-top", 80, 60, 50);
+  @include mixins.resize("padding-left", 50, 40, 30);
+  @include mixins.resize("padding-right", 50, 40, 30);
+  @include mixins.resize("padding-bottom", 50, 40, 30);
+}
+
+.title {
+  @include mixins.resize("margin-bottom", 20, 16, 16);
+  @include mixins.resize("font-size", 28, 24, 22);
+
+  font-family: variables.$font-family-secondary;
+  font-weight: variables.$font-weight-bold;
+  line-height: 130%;
+  color: variables.$color-primary-10;
+}
+
+.description {
+  @include mixins.resize("font-size", 20, 16, 16);
+
+  font-family: variables.$font-family-primary;
+  font-weight: variables.$font-weight-medium;
+  line-height: 150%;
+  color: variables.$color-primary-30;
+}

@@ -3,7 +3,27 @@
 @use "../../../assets/styles/adaptive";
 
 .block {
-  @include mixins.resize("margin-top", 200, 150, 80);
+  @include mixins.resize("margin-top", 120, 90, 70);
 
   text-align: center;
+}
+
+.benefits {
+  @include mixins.resize("max-width", 1592, 1280, 358);
+  @include mixins.resize("margin-top", 200, 150, 80);
+  @include mixins.resize("column-gap", 40, 40, 40);
+  @include mixins.resize("row-gap", 70, 60, 50);
+
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  margin: 0 auto;
+
+  @include adaptive.mobile {
+    flex-direction: column;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
 }

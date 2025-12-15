@@ -1,5 +1,7 @@
 import { type FC } from "react"
 import { Footnote, Title, Subtitle } from "../../shared"
+import { benefits } from "./benefits.data.ts"
+import Benefit from "./Benefit/Benefit.tsx"
 import styles from "./Benefits.module.scss"
 
 const Benefits: FC = () => {
@@ -12,6 +14,12 @@ const Benefits: FC = () => {
 				facilities, and a comprehensive curriculum, we aim to lay a strong
 				foundation for your child's future.
 			</Subtitle>
+
+			<div className={styles.benefits}>
+				{benefits.map((benefit, index) => (
+					<Benefit key={index} {...benefit} />
+				))}
+			</div>
 		</section>
 	)
 }
