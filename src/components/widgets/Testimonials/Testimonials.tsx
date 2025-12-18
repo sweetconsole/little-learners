@@ -1,8 +1,6 @@
 import { type FC } from "react"
 import { Section, Footnote, Title, Subtitle } from "../../shared"
 import TestimonialsSwiper from "./TestimonialsSwiper/TestimonialsSwiper.tsx"
-import styles from "./Testimonials.module.scss"
-
 const Testimonials: FC = () => {
 	return (
 		<Section>
