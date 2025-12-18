@@ -1,12 +1,12 @@
 import { type FC } from "react"
-import { Footnote, Title, Subtitle } from "../../shared"
+import { Section, Footnote, Title, Subtitle } from "../../shared"
 import { benefits } from "./benefits.data.ts"
 import Benefit from "./Benefit/Benefit.tsx"
 import styles from "./Benefits.module.scss"
 
 const Benefits: FC = () => {
 	return (
-		<section className={styles.block}>
+		<Section>
 			<Footnote title="Children Deserve Bright Future" />
 			<Title>Our Benefits</Title>
 			<Subtitle>
@@ -20,7 +20,7 @@ const Benefits: FC = () => {
 					<Benefit key={index} {...benefit} />
 				))}
 			</div>
-		</section>
+		</Section>
 	)
 }
 

@@ -10,6 +10,15 @@
   text-align: left;
   background-color: variables.$color-white;
   border: 2px solid variables.$color-primary-15;
+  box-shadow: 6px 6px 0 2px variables.$color-primary-15;
+
+  @include adaptive.laptop {
+    box-shadow: 4px 4px 0 2px variables.$color-primary-15;
+  }
+
+  @include adaptive.mobile {
+    box-shadow: 4px 4px 0 1px variables.$color-primary-15;
+  }
 }
 
 .icon_container {

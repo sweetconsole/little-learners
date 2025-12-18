@@ -1,0 +1,69 @@
+@use "../../../../assets/styles/variables";
+@use "../../../../assets/styles/mixins";
+@use "../../../../assets/styles/adaptive";
+
+.testimonials {
+  @include mixins.resize("max-width", 1592, 1280, 358);
+  @include mixins.resize("margin-top", 100, 70, 50);
+  @include mixins.resize("gap", 50, 40, 40);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+
+  @include adaptive.mobile {
+    display: block;
+  }
+}
+
+.swipe_button {
+  @include mixins.resize("padding", 14, 12, 12);
+
+  cursor: pointer;
+  background-color: variables.$color-white;
+  border: 2px solid variables.$color-primary-20;
+  border-radius: 8px;
+
+  &:first-of-type {
+    order: 1;
+  }
+
+  &:nth-last-child(1) {
+    order: 3;
+    rotate: 180deg;
+  }
+
+  @include adaptive.mobile {
+    &:nth-last-child(1) {
+      @include mixins.resize("margin-left", 20, 20, 20);
+    }
+  }
+}
+
+.swipe_button_arrow {
+  @include mixins.resize("width", 30, 24, 24);
+  @include mixins.resize("height", 30, 24, 24);
+
+  img {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+  }
+}
+
+.swiper {
+  order: 2;
+  width: 99%;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  @include adaptive.mobile {
+    @include mixins.resize("margin-bottom", 50, 40, 40);
+  }
+}
+
