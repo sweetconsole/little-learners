@@ -3,7 +3,7 @@
 @use "../../../../assets/styles/adaptive";
 
 .testimonial {
-  @include mixins.resize("height", 529, 428, 322);
+  @include mixins.resize("height", 529, 428, 352);
   @include mixins.resize("padding", 50, 40, 30);
   @include mixins.resize("border-radius", 12, 10, 10);
   @include mixins.resize("gap", 30, 24, 20);

@@ -1,6 +1,7 @@
 import { type FC } from "react"
 import { Section, Footnote, Title, Subtitle } from "../../shared"
 import TestimonialsSwiper from "./TestimonialsSwiper/TestimonialsSwiper.tsx"
+
 const Testimonials: FC = () => {
 	return (
 		<Section>

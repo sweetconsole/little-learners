@@ -1,5 +1,5 @@
 import { type FC } from "react"
-import { Intro, Benefits, Testimonials } from "../components/widgets"
+import { Intro, Benefits, Testimonials, FAQ } from "../components/widgets"
 
 const Home: FC = () => {
 	return (
@@ -7,6 +7,7 @@ const Home: FC = () => {
 			<Intro />
 			<Benefits />
 			<Testimonials />
+			<FAQ />
 		</>
 	)
 }
