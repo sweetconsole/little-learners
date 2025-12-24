@@ -1,5 +1,5 @@
-@use "../../../assets/styles/variables";
-@use "../../../assets/styles/mixins";
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
 
 .footnote {
   @include mixins.resize("padding-top", 10, 8, 8);

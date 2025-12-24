@@ -1,6 +1,6 @@
-@use "./variables";
-@use "./functions";
-@use "./adaptive";
+@use "variables";
+@use "functions";
+@use "adaptive";
 
 @mixin resize-desktop($property, $template) {
   @include adaptive.desktop {

@@ -1,4 +1,4 @@
-@use "./variables";
+@use "variables";
 
 @mixin desktop() {
   @media screen and (min-width: #{variables.$not-laptop + 1}) {

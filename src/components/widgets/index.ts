@@ -1,5 +1,6 @@
 export { default as Benefits } from "./Benefits/Benefits.tsx"
 export { default as FAQ } from "./FAQ/FAQ.tsx"
+export { default as Footer } from "./Footer/Footer.tsx"
 export { default as Header } from "./Header/Header.tsx"
 export { default as Intro } from "./Intro/Intro.tsx"
 export { default as Testimonials } from "./Testimonials/Testimonials.tsx"

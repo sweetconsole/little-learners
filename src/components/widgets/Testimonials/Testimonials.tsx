@@ -4,7 +4,7 @@ import TestimonialsSwiper from "./TestimonialsSwiper/TestimonialsSwiper.tsx"
 
 const Testimonials: FC = () => {
 	return (
-		<Section>
+		<Section id="testimonials">
 			<Footnote title="Their Happy Words 🤗" />
 			<Title>Our Testimonials</Title>
 			<Subtitle>

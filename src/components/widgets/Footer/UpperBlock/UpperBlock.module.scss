@@ -1,0 +1,123 @@
+@use "../../../../styles/variables";
+@use "../../../../styles/mixins";
+@use "../../../../styles/adaptive";
+
+.upper {
+  @include mixins.resize("gap", 80, 80, 40);
+
+  display: flex;
+  justify-content: space-between;
+
+  @include adaptive.mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.info {
+  @include mixins.resize("max-width", 519, 393, 999);
+}
+
+.logo {
+  @include mixins.resize("width", 228.37, 182.69, 182.69);
+  @include mixins.resize("height", 50, 40, 40);
+  @include mixins.resize("margin-bottom", 20, 16, 16);
+
+  @include adaptive.mobile {
+    margin: 0 auto;
+  }
+}
+
+.description {
+  @include mixins.resize("font-size", 20, 16, 16);
+  @include mixins.resize("margin-bottom", 50, 40, 40);
+
+  font-family: variables.$font-family-primary;
+  font-weight: variables.$font-weight-medium;
+  line-height: 150%;
+  color: variables.$color-primary-30;
+}
+
+.contacts {
+  @include mixins.resize("gap", 24, 20, 20);
+
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.contact {
+  @include mixins.resize("gap", 10, 8, 8);
+
+  display: flex;
+  align-items: center;
+}
+
+.icon_block {
+  @include mixins.resize("padding", 8, 6, 6);
+  @include mixins.resize("border-radius", 6, 4, 4);
+
+  background-color: variables.$color-accent-97;
+  border: 2px solid variables.$color-primary-15;
+}
+
+.icon {
+  @include mixins.resize("width", 24, 20, 20);
+  @include mixins.resize("height", 24, 20, 20);
+}
+
+.title {
+  @include mixins.resize("font-size", 20, 16, 16);
+
+  font-family: variables.$font-family-primary;
+  font-weight: variables.$font-weight-medium;
+  line-height: 150%;
+  color: variables.$color-primary-15;
+}
+
+.navigation {
+  @include mixins.resize("gap", 30, 20, 30);
+  @include mixins.resize("row-gap", 30, 20, 50);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include adaptive.mobile {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.part {
+  list-style: none;
+}
+
+.block {
+  @include mixins.resize("margin-bottom", 14, 10, 10);
+
+  &:first-child {
+    @include mixins.resize("margin-bottom", 24, 20, 16);
+
+    a {
+      font-weight: variables.$font-weight-semi-bold;
+      color: variables.$color-primary-15;
+
+      &:hover {
+        color: variables.$color-accent-65;
+      }
+    }
+  }
+}
+
+.link {
+  @include mixins.resize("font-size", 20, 16, 16);
+
+  font-family: variables.$font-family-primary;
+  font-weight: variables.$font-weight-medium;
+  line-height: 150%;
+  color: variables.$color-primary-20;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    color: variables.$color-accent-70;
+  }
+}

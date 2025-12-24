@@ -1,4 +1,4 @@
-@use "../../../assets/styles/mixins";
+@use "../../../styles/mixins";
 
 .section {
   @include mixins.resize("margin-top", 200, 150, 80);

@@ -6,7 +6,7 @@ import styles from "./Benefits.module.scss"
 
 const Benefits: FC = () => {
 	return (
-		<Section>
+		<Section id="features">
 			<Footnote title="Children Deserve Bright Future" />
 			<Title>Our Benefits</Title>
 			<Subtitle>

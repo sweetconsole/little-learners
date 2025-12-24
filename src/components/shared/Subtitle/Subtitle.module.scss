@@ -1,5 +1,5 @@
-@use "../../../assets/styles/variables";
-@use "../../../assets/styles/mixins";
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
 
 .text {
   @include mixins.resize("max-width", 992, 880, 358);

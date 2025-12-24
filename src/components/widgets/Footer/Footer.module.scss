@@ -1,0 +1,27 @@
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
+@use "../../../styles/adaptive";
+
+.footer {
+  @include mixins.resize("margin-top", 200, 150, 80);
+  @include mixins.resize("padding-top", 100, 80, 60);
+  @include mixins.resize("padding-left", 113, 80, 30);
+  @include mixins.resize("padding-right", 113, 80, 30);
+  @include mixins.resize("padding-bottom", 40, 40, 30);
+  @include mixins.resize("gap", 50, 40, 30);
+
+  display: flex;
+  flex-direction: column;
+  background-color: variables.$color-white;
+  border: 2px solid variables.$color-primary-15;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 2px variables.$color-primary-15;
+
+  @include adaptive.laptop {
+    box-shadow: 6px 6px 0 2px variables.$color-primary-15;
+  }
+
+  @include adaptive.mobile {
+    box-shadow: 6px 6px 0 1px variables.$color-primary-15;
+  }
+}

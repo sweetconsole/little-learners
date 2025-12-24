@@ -1,5 +1,5 @@
-@use "../../../assets/styles/variables";
-@use "../../../assets/styles/mixins";
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
 
 .title {
   @include mixins.resize("font-size", 58, 48, 38);

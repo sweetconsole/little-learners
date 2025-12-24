@@ -3,7 +3,7 @@ import { Section, Footnote, Title, Subtitle } from "../../shared"
 
 const Faq: FC = () => {
 	return (
-		<Section>
+		<Section id="faq">
 			<Footnote title="Solutions For The Doubts" />
 			<Title>Frequently Asked Questions</Title>
 			<Subtitle>

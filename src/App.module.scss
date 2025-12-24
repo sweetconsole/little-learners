@@ -1,5 +1,5 @@
-@use "./assets/styles/variables";
-@use "./assets/styles/mixins";
+@use "styles/variables";
+@use "styles/mixins";
 
 .container {
   @include mixins.resize("padding-top", 18, 16, 40);
