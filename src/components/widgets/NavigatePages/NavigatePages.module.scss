@@ -1,0 +1,150 @@
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
+@use "../../../styles/adaptive";
+
+.pages {
+	@include mixins.resize("margin-top", 100, 80, 50);
+	@include mixins.resize("gap", 50, 40, 40);
+	@include mixins.resize("max-width", 1592, 1280, 358);
+
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	margin: 0 auto;
+	list-style: none;
+
+	@include adaptive.mobile {
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-columns: 1fr;
+	}
+}
+
+.page {
+	@include mixins.resize("padding", 80, 60, 40);
+	@include mixins.resize("border-radius", 12, 10, 10);
+
+	position: relative;
+	background-color: variables.$color-white;
+	border: 2px solid variables.$color-primary-15;
+	box-shadow: 6px 6px 0 2px variables.$color-primary-15;
+
+	@include adaptive.laptop {
+		box-shadow: 4px 4px 0 2px variables.$color-primary-15;
+	}
+
+	@include adaptive.mobile {
+		box-shadow: 4px 4px 0 1px variables.$color-primary-15;
+	}
+}
+
+.title {
+	@include mixins.resize("margin-bottom", 30, 24, 20);
+	@include mixins.resize("font-size", 48, 34, 28);
+
+	font-family: variables.$font-family-secondary;
+	font-weight: variables.$font-weight-bold;
+	line-height: 130%;
+	color: variables.$color-primary-10;
+}
+
+.lines {
+	@include mixins.resize("gap", 10, 10, 10);
+	@include mixins.resize("margin-bottom", 50, 40, 30);
+
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	padding: 0 2px;
+
+}
+
+.circle {
+	@include mixins.resize("width", 20, 20, 20);
+	@include mixins.resize("height", 20, 20, 20);
+
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	background-color: variables.$color-white;
+	border: 2px solid variables.$color-primary-15;
+	border-radius: 50%;
+	transform: translateY(-50%);
+
+	&:last-child {
+		right: 0;
+	}
+}
+
+.line {
+	@include mixins.resize("height", 12, 12, 12);
+
+	position: relative;
+	width: 100%;
+	height: 12px;
+	background-color: variables.$color-accent-80;
+
+	&::after {
+		position: absolute;
+		top: 4px;
+		display: block;
+		width: 90%;
+		height: 2px;
+		content: "";
+		background-color: variables.$color-black;
+	}
+}
+
+.description {
+	@include mixins.resize("margin-bottom", 80, 60, 40);
+	@include mixins.resize("font-size", 20, 16, 16);
+
+	font-family: variables.$font-family-primary;
+	font-weight: variables.$font-weight-medium;
+	line-height: 150%;
+	color: variables.$color-primary-30;
+}
+
+.link {
+	@include mixins.resize("gap", 10, 10, 10);
+	@include mixins.resize("padding-top", 18, 18, 16);
+	@include mixins.resize("padding-bottom", 18, 18, 16);
+	@include mixins.resize("border-radius", 10, 8, 6);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: variables.$color-accent-90;
+	border: 2px solid variables.$color-primary-15;
+	box-shadow: 4px 4px 0 1px variables.$color-primary-15;
+	transition: all .2s ease-in-out;
+
+	&:hover {
+		margin-top: 4px;
+		margin-left: 4px;
+		background-color: variables.$color-accent-80;
+		box-shadow: 2px 2px 0 0 variables.$color-primary-15;
+	}
+
+	@include adaptive.laptop {
+		box-shadow: 2px 2px 0 1px variables.$color-primary-15;
+	}
+
+	@include adaptive.mobile {
+		box-shadow: 2px 2px 0 0 variables.$color-primary-15;
+	}
+}
+
+.link_title {
+	@include mixins.resize("font-size", 20, 18, 16);
+
+	font-family: variables.$font-family-primary;
+	font-weight: variables.$font-weight-medium;
+	line-height: 150%;
+	color: variables.$color-primary-20;
+}
+
+.link_icon {
+	@include mixins.resize("width", 30, 24, 20);
+	@include mixins.resize("height", 30, 24, 20);
+}
