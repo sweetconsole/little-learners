@@ -1,0 +1,74 @@
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
+@use "../../../styles/adaptive";
+
+.banner {
+  @include mixins.resize("padding-top", 14, 12, 12);
+  @include mixins.resize("padding-bottom", 14, 12, 12);
+  @include mixins.resize("gap", 14, 14, 10);
+  @include mixins.resize("border-radius", 8, 6, 6);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$color-accent-90;
+  border: 2px solid variables.$color-primary-15;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 70%;
+    height: 100%;
+    content: "";
+    background-repeat: no-repeat;
+
+    @include mixins.resize("border-radius", 5, 3, 3);
+  }
+
+  &::before {
+    left: 0;
+    background-image: url("/images/header/banner/decoration-left-desktop.png");
+    background-position: left center;
+
+    @include adaptive.laptop {
+      background-image: url("/images/header/banner/decoration-left-laptop.png");
+      background-position: left center;
+    }
+
+    @include adaptive.mobile {
+      background-image: url("/images/header/banner/decoration-left-mobile.png");
+      background-position: left center;
+    }
+  }
+
+  &::after {
+    right: 0;
+    background-image: url("/images/header/banner/decoration-right-desktop.png");
+    background-position: right center;
+
+    @include adaptive.laptop {
+      background-image: url("/images/header/banner/decoration-right-laptop.png");
+    }
+
+    @include adaptive.mobile {
+      background-image: url("/images/header/banner/decoration-right-mobile.png");
+    }
+  }
+}
+
+.text {
+  @include mixins.resize("font-size", 20, 16, 14);
+
+  font-family: variables.$font-family-primary;
+  font-weight: variables.$font-weight-medium;
+  line-height: 150%;
+  color: variables.$color-primary-15;
+}
+
+.arrow {
+  @include mixins.resize("width", 18, 14.4, 12);
+  @include mixins.resize("height", 21, 16.8, 14);
+}

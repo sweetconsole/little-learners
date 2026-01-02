@@ -1,6 +1,6 @@
 import { type FC } from "react"
-import { Picture } from "../../../shared"
-import { Arrow } from "../header.data.ts"
+import { Picture } from "../../shared"
+import { Arrow } from "../Header/header.data.ts"
 import styles from "./Banner.module.scss"
 
 const Banner: FC = () => {

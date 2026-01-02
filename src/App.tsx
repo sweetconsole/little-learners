@@ -13,7 +13,7 @@ import {
 } from "./utils/adaptive.constants.ts"
 import { pagesConfig } from "./utils/pages.config.ts"
 import { Home } from "./pages"
-import { Header, Footer } from "./components/widgets"
+import { Header, Footer, Banner } from "./components/widgets"
 import styles from "./App.module.scss"
 
 const App: FC = () => {
@@ -51,6 +51,7 @@ const App: FC = () => {
 	return (
 		<BrowserRouter>
 			<div className={styles.container}>
+				<Banner />
 				<Header />
 
 				<Routes>

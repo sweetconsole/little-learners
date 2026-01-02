@@ -1,0 +1,137 @@
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
+@use "../../../styles/adaptive";
+
+.accordion {
+	@include mixins.resize("gap", 50, 40, 20);
+	@include mixins.resize("margin-top", 100, 80, 50);
+	@include mixins.resize("max-width", 1592, 1280, 358);
+
+	column-count: 2;
+	display: block;
+	margin: 0 auto;
+
+	@include adaptive.mobile {
+		column-count: 1;
+	}
+}
+
+.item,
+.item_active{
+	@include mixins.resize("padding-top", 34, 24, 20);
+	@include mixins.resize("padding-bottom", 34, 24, 20);
+	@include mixins.resize("padding-left", 40, 30, 24);
+	@include mixins.resize("padding-right", 40, 30, 24);
+	@include mixins.resize("margin-bottom", 30, 24, 20);
+	@include mixins.resize("gap", 30, 24, 10);
+	@include mixins.resize("border-radius", 12, 10, 10);
+
+	display: inline-flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	background-color: variables.$color-accent-95;
+	border: 2px solid variables.$color-primary-15;
+	transition: all .25s ease-in;
+	break-inside: avoid;
+
+	&_active {
+		background-color: variables.$color-white;
+	}
+}
+
+.content {
+
+}
+
+.question {
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.title {
+	@include mixins.resize("font-size", 22, 18, 18);
+
+	font-family: variables.$font-family-primary;
+	font-weight: variables.$font-weight-semi-bold;
+	line-height: 150%;
+	color: variables.$color-primary-15;
+	text-align: left;
+}
+
+.answer,
+.answer_active {
+	max-height: 0;
+	overflow: hidden;
+	transition: all .25s ease-in;
+
+	&_active {
+		@include mixins.resize("margin-top", 24, 20, 24);
+		@include mixins.resize("gap", 24, 20, 24);
+
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		max-height: 999px;
+	}
+}
+
+.line {
+	width: 100%;
+	height: 2px;
+	background-color: variables.$color-primary-15;
+}
+
+.text {
+	@include mixins.resize("font-size", 20, 16, 16);
+
+	font-family: variables.$font-family-primary;
+	font-weight: variables.$font-weight-medium;
+	line-height: 150%;
+	color: variables.$color-primary-15;
+	text-align: left;
+}
+
+.button,
+.button_active {
+	@include mixins.resize("min-width", 40, 32, 32);
+	@include mixins.resize("min-height", 40, 32, 32);
+	@include mixins.resize("border-radius", 6, 4, 4);
+
+	position: relative;
+	cursor: pointer;
+	background-color: variables.$color-accent-97;
+
+	&::after,
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		content: "";
+		background-color: variables.$color-primary-15;
+		border-radius: 2px;
+		transform: translate(-50%, -50%);
+		transform-origin: center center;
+		transition: all .25s ease-in;
+	}
+
+	&::before {
+		@include mixins.resize("width", 16, 14, 14);
+
+		height: 2px;
+	}
+
+	&::after {
+		@include mixins.resize("height", 16, 14, 14);
+
+		width: 2px;
+		opacity: 0;
+	}
+
+	&_active {
+		&::after {
+			opacity: 1;
+		}
+	}
+}
