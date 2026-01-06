@@ -5,10 +5,10 @@
 ## Технологии
 
 <div id="steck">
-    <img src="./.github/vite.svg" width="40" height="40" alt="Vite" />
-    <img src="./.github/react.svg" width="40" height="40" alt="React"/>
-    <img src="./.github/typescript.svg" width="40" height="40" alt="Type Script"/>
-    <img src="./.github/sass.svg" width="40" height="40" alt="SASS"/>
-    <img src="./.github/supabase.svg" width="40" height="40" alt="Supabase"/>
-    <img src="./.github/react-query.svg" width="40" height="40" alt="React Query"/>
+    <img src="./.github/vite.svg" width="50" height="50" alt="Vite" />
+    <img src="./.github/react.svg" width="50" height="50" alt="React"/>
+    <img src="./.github/typescript.svg" width="50" height="50" alt="Type Script"/>
+    <img src="./.github/sass.svg" width="50" height="50" alt="SASS"/>
+    <img src="./.github/supabase.svg" width="50" height="50" alt="Supabase"/>
+    <img src="./.github/react-query.svg" width="50" height="50" alt="React Query"/>
 </div>
