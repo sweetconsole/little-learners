@@ -11,10 +11,12 @@ import {
 	notLaptop,
 	notMobile
 } from "./utils/adaptive.constants.ts"
-import { pagesConfig } from "./utils/pages.config.ts"
+import { pagesConfig } from "./config/pages.config.ts"
 import { Home } from "./pages"
 import { Header, Footer, Banner } from "./components/widgets"
 import styles from "./App.module.scss"
+import { QueryClientProvider } from "@tanstack/react-query"
+import { queryClient } from "./config/queryClient.config.ts"
 
 const App: FC = () => {
 	useEffect(() => {
@@ -50,16 +52,18 @@ const App: FC = () => {
 
 	return (
 		<BrowserRouter>
-			<div className={styles.container}>
-				<Banner />
-				<Header />
+			<QueryClientProvider client={queryClient}>
+				<div className={styles.container}>
+					<Banner />
+					<Header />
 
-				<Routes>
-					<Route path={pagesConfig.home} element={<Home />} />
-				</Routes>
+					<Routes>
+						<Route path={pagesConfig.home} element={<Home />} />
+					</Routes>
 
-				<Footer />
-			</div>
+					<Footer />
+				</div>
+			</QueryClientProvider>
 		</BrowserRouter>
 	)
 }

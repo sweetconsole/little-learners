@@ -1,5 +1,5 @@
 import type { PictureAssets } from "../../../utils/assets.types.ts"
-import { pagesConfig } from "../../../utils/pages.config.ts"
+import { pagesConfig } from "../../../config/pages.config.ts"
 
 type Page = {
 	title: string

@@ -1,4 +1,4 @@
-import { pagesConfig } from "../../../utils/pages.config.ts"
+import { pagesConfig } from "../../../config/pages.config.ts"
 import type { PictureAssets } from "../../../utils/assets.types.ts"
 
 type Link = {

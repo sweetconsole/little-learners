@@ -1,6 +1,6 @@
 import { type FC } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { pagesConfig } from "../../../utils/pages.config.ts"
+import { pagesConfig } from "../../../config/pages.config.ts"
 import { Picture } from "../../shared"
 import { Logo } from "./header.data.ts"
 import styles from "./Header.module.scss"

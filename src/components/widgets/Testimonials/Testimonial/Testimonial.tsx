@@ -3,29 +3,30 @@ import { Picture } from "../../../shared"
 import {
 	type TestimonialType,
 	StarFill,
-	StarEmpty
+	StarEmpty,
+	FemaleAvatar,
+	MaleAvatar
 } from "../testimonials.data.ts"
 import styles from "./Testimonial.module.scss"
 
-const Testimonial: FC<TestimonialType> = ({ avatar, stars, name, text }) => {
+const Testimonial: FC<TestimonialType> = ({ gender, stars, name, text }) => {
 	return (
 		<div className={styles.testimonial}>
 			<div className={styles.author}>
 				<div className={styles.avatar}>
-					<Picture assets={avatar} />
+					<Picture assets={gender == "male" ? MaleAvatar : FemaleAvatar} />
 				</div>
 
 				<h2 className={styles.name}>{name}</h2>
 			</div>
 
 			<div className={styles.stars}>
-				{stars.map((star, index) => (
+				{[...Array(5)].map((_, index) => (
 					<Fragment key={index}>
-						{star === "fill" ? (
-							<Picture className={styles.star} assets={StarFill} />
-						) : (
-							<Picture className={styles.star} assets={StarEmpty} />
-						)}
+						<Picture
+							className={styles.star}
+							assets={index < stars ? StarFill : StarEmpty}
+						/>
 					</Fragment>
 				))}
 			</div>

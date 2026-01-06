@@ -1,12 +1,16 @@
 import { type FC, useRef } from "react"
 import { Swiper as SwiperType } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Arrow, testimonials } from "../testimonials.data.ts"
-import styles from "./TestimonialsSwiper.module.scss"
 import { Picture } from "../../../shared"
 import Testimonial from "../Testimonial/Testimonial.tsx"
+import { Arrow, type TestimonialType } from "../testimonials.data.ts"
+import styles from "./TestimonialsSwiper.module.scss"
 
-const TestimonialsSwiper: FC = () => {
+interface TestimonialsSwiperProps {
+	testimonials: Array<TestimonialType>
+}
+
+const TestimonialsSwiper: FC<TestimonialsSwiperProps> = ({ testimonials }) => {
 	const swiperRef = useRef<SwiperType>(null)
 
 	return (
