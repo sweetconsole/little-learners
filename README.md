@@ -5,7 +5,10 @@
 ## Технологии
 
 <div id="steck">
-    <img src="./.github/vite.svg" width="50" height="50" alt="Vite" />
+    <a href="https://vite.dev/">
+        <img src="./.github/vite.svg" width="50" height="50" alt="Vite" />
+    </a>
+    
     <img src="./.github/react.svg" width="50" height="50" alt="React"/>
     <img src="./.github/typescript.svg" width="50" height="50" alt="Type Script"/>
     <img src="./.github/sass.svg" width="50" height="50" alt="SASS"/>
