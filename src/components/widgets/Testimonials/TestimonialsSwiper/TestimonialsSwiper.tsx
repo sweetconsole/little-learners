@@ -1,7 +1,7 @@
 import { type FC, useRef } from "react"
 import { Swiper as SwiperType } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Picture } from "../../../shared"
+import { Picture, Container } from "../../../shared"
 import Testimonial from "../Testimonial/Testimonial.tsx"
 import { Arrow, type TestimonialType } from "../testimonials.data.ts"
 import styles from "./TestimonialsSwiper.module.scss"
@@ -14,7 +14,7 @@ const TestimonialsSwiper: FC<TestimonialsSwiperProps> = ({ testimonials }) => {
 	const swiperRef = useRef<SwiperType>(null)
 
 	return (
-		<div className={styles.testimonials}>
+		<Container className={styles.testimonials}>
 			<Swiper
 				className={styles.swiper}
 				loop={true}
@@ -60,7 +60,7 @@ const TestimonialsSwiper: FC<TestimonialsSwiperProps> = ({ testimonials }) => {
 					<Picture assets={Arrow} />
 				</div>
 			</button>
-		</div>
+		</Container>
 	)
 }
 

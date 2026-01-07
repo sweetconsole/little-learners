@@ -4,12 +4,9 @@
 
 .accordion {
 	@include mixins.resize("gap", 50, 40, 20);
-	@include mixins.resize("margin-top", 100, 80, 50);
-	@include mixins.resize("max-width", 1592, 1280, 358);
 
 	column-count: 2;
 	display: block;
-	margin: 0 auto;
 
 	@include adaptive.mobile {
 		column-count: 1;

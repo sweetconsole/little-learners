@@ -1,0 +1,8 @@
+@use "../../../styles/mixins";
+
+.container {
+	@include mixins.resize("margin-top", 100, 80, 50);
+	@include mixins.resize("max-width", 1596, 1280, 358);
+
+	margin: 0 auto;
+}

@@ -3,7 +3,6 @@
 @use "../../../styles/adaptive";
 
 .intro {
-  @include mixins.resize("max-width", 1590, 1280, 358);
   @include mixins.resize("gap", 60, 50, 40);
   @include mixins.resize("margin-top", 80, 60, 50);
 
@@ -11,8 +10,6 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
 
   @include adaptive.mobile {
     display: flex;

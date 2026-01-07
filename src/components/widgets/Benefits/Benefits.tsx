@@ -1,5 +1,5 @@
 import { type FC } from "react"
-import { Section, Footnote, Title, Subtitle } from "../../shared"
+import { Section, Footnote, Title, Subtitle, Container } from "../../shared"
 import { benefits } from "./benefits.data.ts"
 import Benefit from "./Benefit/Benefit.tsx"
 import styles from "./Benefits.module.scss"
@@ -15,11 +15,11 @@ const Benefits: FC = () => {
 				foundation for your child's future.
 			</Subtitle>
 
-			<div className={styles.benefits}>
+			<Container className={styles.benefits}>
 				{benefits.map((benefit, index) => (
 					<Benefit key={index} {...benefit} />
 				))}
-			</div>
+			</Container>
 		</Section>
 	)
 }

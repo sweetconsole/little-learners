@@ -1,11 +1,12 @@
 import { type FC } from "react"
+import { Container } from "../../shared"
 import Statistics from "./Statistics/Statistics.tsx"
 import Image from "./Image/Image.jsx"
 import styles from "./Intro.module.scss"
 
 const Intro: FC = () => {
 	return (
-		<section className={styles.intro}>
+		<Container className={styles.intro}>
 			<Image />
 
 			<div className={styles.info}>
@@ -22,7 +23,7 @@ const Intro: FC = () => {
 
 				<Statistics />
 			</div>
-		</section>
+		</Container>
 	)
 }
 

@@ -3,14 +3,11 @@
 @use "../../../styles/adaptive";
 
 .pages {
-	@include mixins.resize("margin-top", 100, 80, 50);
 	@include mixins.resize("gap", 50, 40, 40);
-	@include mixins.resize("max-width", 1592, 1280, 358);
 
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
-	margin: 0 auto;
 	list-style: none;
 
 	@include adaptive.mobile {

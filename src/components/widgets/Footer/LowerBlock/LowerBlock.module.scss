@@ -35,6 +35,11 @@
   font-family: variables.$font-family-primary;
   font-weight: variables.$font-weight-medium;
   color: variables.$color-primary-20;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    color: variables.$color-accent-65;
+  }
 }
 
 .navigation_line {
@@ -59,6 +64,11 @@
   display: block;
   background-color: variables.$color-accent-90;
   border: 2px solid variables.$color-primary-15;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: variables.$color-accent-75;
+  }
 }
 
 .icon {

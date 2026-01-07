@@ -1,6 +1,8 @@
 import { type FC } from "react"
-import { networks } from "../footer.data.ts"
+import { Link } from "react-router-dom"
 import { Picture } from "../../../shared"
+import { pagesConfig } from "../../../../config/pages.config.ts"
+import { networks } from "../footer.data.ts"
 import styles from "./LowerBlock.module.scss"
 
 const LowerBlock: FC = () => {
@@ -10,18 +12,28 @@ const LowerBlock: FC = () => {
 
 			<div className={styles.info}>
 				<nav className={styles.navigation}>
-					<li className={styles.link}>Terms of Service</li>
-					<li className={styles.navigation_line}></li>
-					<li className={styles.link}>Privacy Policy</li>
-					<li className={styles.navigation_line}></li>
-					<li className={styles.link}>Cookie Policy</li>
+					<Link className={styles.link} to={pagesConfig.termsService}>
+						Terms of Service
+					</Link>
+
+					<div className={styles.navigation_line}></div>
+
+					<Link className={styles.link} to={pagesConfig.privacyPolicy}>
+						Privacy Policy
+					</Link>
+
+					<div className={styles.navigation_line}></div>
+
+					<Link className={styles.link} to={pagesConfig.cookiePolicy}>
+						Cookie Policy
+					</Link>
 				</nav>
 
 				<ul className={styles.networks}>
 					{networks.map((network, index) => (
 						<li key={index}>
 							<a className={styles.network} href={network.link}>
-								<Picture assets={network.icon} />
+								<Picture className={styles.icon} assets={network.icon} />
 							</a>
 						</li>
 					))}

@@ -1,3 +1,4 @@
+export { default as Container } from "./Container/Container.tsx"
 export { default as Footnote } from "./Footnote/Footnote.tsx"
 export { default as Picture } from "./Picture/Picture.tsx"
 export { default as Section } from "./Section/Section.tsx"

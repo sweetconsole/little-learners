@@ -1,6 +1,5 @@
 import { type FC, useEffect } from "react"
 import { Route, Routes } from "react-router"
-import { BrowserRouter } from "react-router-dom"
 import {
 	widthDesktop,
 	widthLaptop,
@@ -15,8 +14,6 @@ import { pagesConfig } from "./config/pages.config.ts"
 import { Home } from "./pages"
 import { Header, Footer, Banner } from "./components/widgets"
 import styles from "./App.module.scss"
-import { QueryClientProvider } from "@tanstack/react-query"
-import { queryClient } from "./config/queryClient.config.ts"
 
 const App: FC = () => {
 	useEffect(() => {
@@ -51,20 +48,16 @@ const App: FC = () => {
 	}, [])
 
 	return (
-		<BrowserRouter>
-			<QueryClientProvider client={queryClient}>
-				<div className={styles.container}>
-					<Banner />
-					<Header />
+		<div className={styles.container}>
+			<Banner />
+			<Header />
 
-					<Routes>
-						<Route path={pagesConfig.home} element={<Home />} />
-					</Routes>
+			<Routes>
+				<Route path={pagesConfig.home} element={<Home />} />
+			</Routes>
 
-					<Footer />
-				</div>
-			</QueryClientProvider>
-		</BrowserRouter>
+			<Footer />
+		</div>
 	)
 }
 

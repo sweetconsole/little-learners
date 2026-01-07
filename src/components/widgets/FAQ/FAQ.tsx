@@ -1,7 +1,7 @@
 import { type FC, useState } from "react"
-import { Section, Footnote, Title, Subtitle } from "../../shared"
-import styles from "./FAQ.module.scss"
+import { Section, Footnote, Title, Subtitle, Container } from "../../shared"
 import { answers } from "./faq.data.ts"
+import styles from "./FAQ.module.scss"
 
 const Faq: FC = () => {
 	const [selected, setSelected] = useState<number | null>(0)
@@ -22,7 +22,7 @@ const Faq: FC = () => {
 				informed decisions for your child's education.
 			</Subtitle>
 
-			<div className={styles.accordion}>
+			<Container className={styles.accordion}>
 				{answers.map((answer, index) => (
 					<div
 						className={selected === index ? styles.item_active : styles.item}
@@ -51,7 +51,7 @@ const Faq: FC = () => {
 						></button>
 					</div>
 				))}
-			</div>
+			</Container>
 		</Section>
 	)
 }

@@ -51,6 +51,16 @@
 
   display: flex;
   align-items: center;
+
+  &:hover {
+    .icon_block {
+      background-color: variables.$color-accent-80;
+    }
+
+    .title {
+      color: variables.$color-accent-65;
+    }
+  }
 }
 
 .icon_block {
@@ -59,6 +69,7 @@
 
   background-color: variables.$color-accent-97;
   border: 2px solid variables.$color-primary-15;
+  transition: all .2s ease-in-out;
 }
 
 .icon {
@@ -73,6 +84,7 @@
   font-weight: variables.$font-weight-medium;
   line-height: 150%;
   color: variables.$color-primary-15;
+  transition: all .2s ease-in-out;
 }
 
 .navigation {
