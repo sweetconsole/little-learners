@@ -1,7 +1,8 @@
 import { type FC } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { Section, Footnote, Title, Subtitle } from "../../shared"
-import { supabase } from "../../../config/supabase.config.ts"
+import { supabase } from "../../../utils/supabase.ts"
+import { shuffledArray } from "../../../utils/shuffledArray.method.ts"
 import TestimonialsSwiper from "./TestimonialsSwiper/TestimonialsSwiper.tsx"
 import { testimonials } from "./testimonials.data.ts"
 
@@ -9,7 +10,11 @@ const Testimonials: FC = () => {
 	const { data, isLoading, error } = useQuery({
 		queryKey: ["reviews"],
 		queryFn: async () => {
-			const query = supabase.from("reviews").select("*").gt("stars", 3)
+			const query = supabase
+				.from("reviews")
+				.select("*")
+				.gt("stars", 3)
+				.limit(21)
 
 			const { data, error } = await query
 
@@ -34,7 +39,9 @@ const Testimonials: FC = () => {
 			</Subtitle>
 
 			<TestimonialsSwiper
-				testimonials={error || !data || isLoading ? testimonials : data}
+				testimonials={
+					error || !data || isLoading ? testimonials : shuffledArray(data)
+				}
 			/>
 		</Section>
 	)

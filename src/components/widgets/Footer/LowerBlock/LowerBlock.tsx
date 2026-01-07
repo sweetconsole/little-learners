@@ -1,7 +1,7 @@
 import { type FC } from "react"
 import { Link } from "react-router-dom"
 import { Picture } from "../../../shared"
-import { pagesConfig } from "../../../../config/pages.config.ts"
+import { pagesConfig } from "../../../../utils/pages.config.ts"
 import { networks } from "../footer.data.ts"
 import styles from "./LowerBlock.module.scss"
 

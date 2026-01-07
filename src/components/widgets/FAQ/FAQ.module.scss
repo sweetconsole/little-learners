@@ -21,13 +21,11 @@
 	@include mixins.resize("padding-right", 40, 30, 24);
 	@include mixins.resize("margin-bottom", 30, 24, 20);
 	@include mixins.resize("gap", 30, 24, 10);
-	@include mixins.resize("border-radius", 12, 10, 10);
 
 	display: inline-flex;
 	align-items: flex-start;
 	justify-content: space-between;
 	background-color: variables.$color-accent-95;
-	border: 2px solid variables.$color-primary-15;
 	transition: all .25s ease-in;
 	break-inside: avoid;
 

@@ -1,7 +1,15 @@
 import { type FC, useState } from "react"
-import { Section, Footnote, Title, Subtitle, Container } from "../../shared"
+import {
+	Section,
+	Footnote,
+	Title,
+	Subtitle,
+	Container,
+	CardListItem
+} from "../../shared"
 import { answers } from "./faq.data.ts"
 import styles from "./FAQ.module.scss"
+import clsx from "clsx"
 
 const Faq: FC = () => {
 	const [selected, setSelected] = useState<number | null>(0)
@@ -24,8 +32,11 @@ const Faq: FC = () => {
 
 			<Container className={styles.accordion}>
 				{answers.map((answer, index) => (
-					<div
-						className={selected === index ? styles.item_active : styles.item}
+					<CardListItem
+						className={clsx(
+							selected == index && styles.item_active,
+							styles.item
+						)}
 						key={index}
 						onClick={() => toggle(index)}
 					>
@@ -34,9 +45,10 @@ const Faq: FC = () => {
 								<h3 className={styles.title}>{answer.question}</h3>
 							</div>
 							<div
-								className={
-									selected === index ? styles.answer_active : styles.answer
-								}
+								className={clsx(
+									selected == index && styles.answer_active,
+									styles.answer
+								)}
 							>
 								<div className={styles.line}></div>
 								<p className={styles.text}>{answer.answer}</p>
@@ -44,12 +56,13 @@ const Faq: FC = () => {
 						</div>
 
 						<button
-							className={
-								selected === index ? styles.button_active : styles.button
-							}
+							className={clsx(
+								selected == index && styles.button_active,
+								styles.button
+							)}
 							aria-label="Show answer"
 						></button>
-					</div>
+					</CardListItem>
 				))}
 			</Container>
 		</Section>

@@ -1,10 +1,11 @@
 import { type FC, Fragment } from "react"
+import { Card } from "../../../shared"
 import { statistics } from "./Statistics.data.ts"
 import styles from "./Statistics.module.scss"
 
 const Statistics: FC = () => {
 	return (
-		<div className={styles.statistics}>
+		<Card className={styles.statistics}>
 			{statistics.map((statistic, index) => (
 				<Fragment key={index}>
 					{statistic.type == "value" ? (
@@ -17,7 +18,7 @@ const Statistics: FC = () => {
 					)}
 				</Fragment>
 			))}
-		</div>
+		</Card>
 	)
 }
 

@@ -1,10 +1,11 @@
 import { type FC, useRef } from "react"
 import { Swiper as SwiperType } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Picture, Container } from "../../../shared"
+import { Container } from "../../../shared"
 import Testimonial from "../Testimonial/Testimonial.tsx"
-import { Arrow, type TestimonialType } from "../testimonials.data.ts"
+import { type TestimonialType } from "../testimonials.data.ts"
 import styles from "./TestimonialsSwiper.module.scss"
+import SwitchSlideButton from "../SwitchSlideButton/SwitchSlideButton.tsx"
 
 interface TestimonialsSwiperProps {
 	testimonials: Array<TestimonialType>
@@ -41,25 +42,15 @@ const TestimonialsSwiper: FC<TestimonialsSwiperProps> = ({ testimonials }) => {
 				))}
 			</Swiper>
 
-			<button
-				className={styles.swipe_button}
-				aria-label="Previous testimonial"
+			<SwitchSlideButton
 				onClick={() => swiperRef.current?.slidePrev()}
-			>
-				<div className={styles.swipe_button_arrow}>
-					<Picture assets={Arrow} />
-				</div>
-			</button>
+				ariaLabel="Previous testimonial"
+			/>
 
-			<button
-				className={styles.swipe_button}
-				aria-label="Next testimonial"
+			<SwitchSlideButton
 				onClick={() => swiperRef.current?.slideNext()}
-			>
-				<div className={styles.swipe_button_arrow}>
-					<Picture assets={Arrow} />
-				</div>
-			</button>
+				ariaLabel="Previous testimonial"
+			/>
 		</Container>
 	)
 }

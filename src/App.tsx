@@ -10,7 +10,7 @@ import {
 	notLaptop,
 	notMobile
 } from "./utils/adaptive.constants.ts"
-import { pagesConfig } from "./config/pages.config.ts"
+import { pagesConfig } from "./utils/pages.config.ts"
 import { Home } from "./pages"
 import { Header, Footer, Banner } from "./components/widgets"
 import styles from "./App.module.scss"

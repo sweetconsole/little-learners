@@ -1,14 +1,12 @@
-type ImageAttribute = {
-	src: string
-	alt?: string
-}
-
 type Source = {
 	srcSet: string
 	media: string
 }
 
 export type PictureAssets = {
-	attributes: ImageAttribute
+	attributes: {
+		src: string
+		alt?: string
+	}
 	sources: Array<Source>
 }

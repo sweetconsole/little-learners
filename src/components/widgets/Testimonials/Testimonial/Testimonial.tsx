@@ -1,5 +1,5 @@
 import { type FC, Fragment } from "react"
-import { Picture } from "../../../shared"
+import { Picture, CardListItem } from "../../../shared"
 import {
 	type TestimonialType,
 	StarFill,
@@ -11,7 +11,7 @@ import styles from "./Testimonial.module.scss"
 
 const Testimonial: FC<TestimonialType> = ({ gender, stars, name, text }) => {
 	return (
-		<div className={styles.testimonial}>
+		<CardListItem className={styles.testimonial}>
 			<div className={styles.author}>
 				<div className={styles.avatar}>
 					<Picture assets={gender == "male" ? MaleAvatar : FemaleAvatar} />
@@ -32,7 +32,7 @@ const Testimonial: FC<TestimonialType> = ({ gender, stars, name, text }) => {
 			</div>
 
 			<p className={styles.text}>{text}</p>
-		</div>
+		</CardListItem>
 	)
 }
 

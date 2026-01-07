@@ -1,14 +1,7 @@
 import { type FC } from "react"
-import {
-	Section,
-	Footnote,
-	Title,
-	Subtitle,
-	Picture,
-	Container
-} from "../../shared"
-import { pages, Arrow } from "./navigatePages.data.ts"
-import { HashLink } from "react-router-hash-link"
+import { Section, Footnote, Title, Subtitle, ContainerList } from "../../shared"
+import { pages } from "./navigatePages.data.ts"
+import NavigatePage from "./NavigatePage/NavigatePage.tsx"
 import styles from "./NavigatePages.module.scss"
 
 const NavigatePages: FC = () => {
@@ -22,35 +15,11 @@ const NavigatePages: FC = () => {
 				enriching experiences that await your child at our kindergarten school
 			</Subtitle>
 
-			<Container>
-				<ul className={styles.pages}>
-					{pages.map((page, index) => (
-						<li className={styles.page} key={index}>
-							<h2 className={styles.title}>{page.title}</h2>
-
-							<div className={styles.lines}>
-								<div className={styles.circle}></div>
-
-								<div className={styles.line}></div>
-								<div className={styles.line}></div>
-								<div className={styles.line}></div>
-								<div className={styles.line}></div>
-								<div className={styles.line}></div>
-								<div className={styles.line}></div>
-
-								<div className={styles.circle}></div>
-							</div>
-
-							<p className={styles.description}>{page.description}</p>
-
-							<HashLink className={styles.link} to={page.url}>
-								<p className={styles.link_title}>Learn More </p>
-								<Picture className={styles.link_icon} assets={Arrow} />
-							</HashLink>
-						</li>
-					))}
-				</ul>
-			</Container>
+			<ContainerList className={styles.pages}>
+				{pages.map((page, index) => (
+					<NavigatePage key={index} {...page} />
+				))}
+			</ContainerList>
 		</Section>
 	)
 }

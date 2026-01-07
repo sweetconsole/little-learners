@@ -1,4 +1,5 @@
 import { type FC, type JSX } from "react"
+import clsx from "clsx"
 import styles from "./Section.module.scss"
 
 interface SectionProps {
@@ -9,7 +10,7 @@ interface SectionProps {
 
 const Section: FC<SectionProps> = ({ className, children, id }) => {
 	return (
-		<section className={[className, styles.section].join(" ")} id={id}>
+		<section className={clsx(className, styles.section)} id={id}>
 			{children}
 		</section>
 	)
