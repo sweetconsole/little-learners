@@ -1,10 +1,9 @@
 import { type FC } from "react"
-import { PageLayout } from "../components/layouts/"
 import { Description, Footnote, PageBanner, Title } from "../components/shared"
 
 const StudentLife: FC = () => {
 	return (
-		<PageLayout>
+		<>
 			<PageBanner>
 				<PageBanner.Left>
 					<Footnote title="Enriching Student Life" />
@@ -22,7 +21,7 @@ const StudentLife: FC = () => {
 					</Description>
 				</PageBanner.Right>
 			</PageBanner>
-		</PageLayout>
+		</>
 	)
 }
 

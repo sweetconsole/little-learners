@@ -1,10 +1,9 @@
 import { type FC } from "react"
-import { PageLayout } from "../components/layouts/"
 import { Footnote, PageBanner, Description, Title } from "../components/shared"
 
 const About: FC = () => {
 	return (
-		<PageLayout>
+		<>
 			<PageBanner>
 				<PageBanner.Left>
 					<Footnote title="Overview" />
@@ -23,7 +22,7 @@ const About: FC = () => {
 					</Description>
 				</PageBanner.Right>
 			</PageBanner>
-		</PageLayout>
+		</>
 	)
 }
 

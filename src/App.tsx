@@ -1,6 +1,5 @@
 import { type FC, useEffect } from "react"
 import { Route, Routes } from "react-router"
-import { AnimatePresence } from "framer-motion"
 import {
 	widthDesktop,
 	widthLaptop,
@@ -22,6 +21,7 @@ import {
 } from "./pages"
 import { ScrollToTop } from "./components/utils/"
 import styles from "./App.module.scss"
+import { Banner, Footer, Header } from "./components/widgets"
 
 const App: FC = () => {
 	useEffect(() => {
@@ -56,20 +56,22 @@ const App: FC = () => {
 	}, [])
 
 	return (
-		<AnimatePresence mode="wait">
-			<div className={styles.container}>
-				<ScrollToTop />
+		<div className={styles.container}>
+			<ScrollToTop />
+			<Banner />
+			<Header />
 
-				<Routes>
-					<Route path={pagesConfig.home} element={<Home />} />
-					<Route path={pagesConfig.about} element={<About />} />
-					<Route path={pagesConfig.academics} element={<Academics />} />
-					<Route path={pagesConfig.admissions} element={<Admission />} />
-					<Route path={pagesConfig.studentLife} element={<StudentLife />} />
-					<Route path={pagesConfig.contact} element={<Contact />} />
-				</Routes>
-			</div>
-		</AnimatePresence>
+			<Routes>
+				<Route path={pagesConfig.home} element={<Home />} />
+				<Route path={pagesConfig.about} element={<About />} />
+				<Route path={pagesConfig.academics} element={<Academics />} />
+				<Route path={pagesConfig.admissions} element={<Admission />} />
+				<Route path={pagesConfig.studentLife} element={<StudentLife />} />
+				<Route path={pagesConfig.contact} element={<Contact />} />
+			</Routes>
+
+			<Footer />
+		</div>
 	)
 }
 

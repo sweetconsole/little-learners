@@ -1,5 +1,4 @@
 import { type FC } from "react"
-import { PageLayout } from "../components/layouts/"
 import {
 	Intro,
 	Benefits,
@@ -10,13 +9,13 @@ import {
 
 const Home: FC = () => {
 	return (
-		<PageLayout>
+		<>
 			<Intro />
 			<Benefits />
 			<Testimonials />
 			<FAQ />
 			<NavigatePages />
-		</PageLayout>
+		</>
 	)
 }
 
