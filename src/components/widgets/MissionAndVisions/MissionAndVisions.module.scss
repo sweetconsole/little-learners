@@ -1,0 +1,59 @@
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
+@use "../../../styles/adaptive";
+
+.list {
+	@include mixins.resize("gap", 60, 40, 30);
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	@include adaptive.mobile {
+		grid-template-columns: 1fr;
+	}
+}
+
+.item {
+	@include mixins.resize("padding", 60, 50, 40);
+
+	text-align: left;
+}
+
+.header {
+	@include mixins.resize("margin-bottom", 60, 50, 40);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.title {
+	@include mixins.resize("font-size", 48, 38, 30);
+
+	font-family: variables.$font-family-secondary;
+	font-weight: variables.$font-weight-bold;
+	line-height: 130%;
+	color: variables.$color-primary-15;
+}
+
+.icon {
+	@include mixins.resize("height", 80, 60, 50);
+}
+
+.icon_mission {
+	@include mixins.resize("width", 80.58, 60.43, 50.36);
+}
+
+.icon_visions {
+	@include mixins.resize("width", 106.71, 80.03, 66.7);
+}
+
+.description {
+	@include mixins.resize("font-size", 20, 16, 16);
+
+	font-family: variables.$font-family-primary;
+	font-weight: variables.$font-weight-medium;
+	line-height: 130%;
+	color: variables.$color-primary-20;
+
+}

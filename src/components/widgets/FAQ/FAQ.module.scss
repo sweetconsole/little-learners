@@ -7,6 +7,10 @@
 
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+
+	@include adaptive.mobile {
+		grid-template-columns: 1fr;
+	}
 }
 
 .accordion {
@@ -15,7 +19,7 @@
 	display: flex;
 	flex-flow: column wrap;
 	gap: 1.5rem;
-	max-height: 2000px; /* Нужно указать высоту! */
+	max-height: 2000px;
 
 	@include adaptive.mobile {
 		column-count: 1;

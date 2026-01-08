@@ -1,5 +1,6 @@
 import { type FC } from "react"
 import { Footnote, PageBanner, Description, Title } from "../components/shared"
+import { MissionAndVisions } from "../components/widgets"
 
 const About: FC = () => {
 	return (
@@ -22,6 +23,8 @@ const About: FC = () => {
 					</Description>
 				</PageBanner.Right>
 			</PageBanner>
+
+			<MissionAndVisions />
 		</>
 	)
 }
