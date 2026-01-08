@@ -1,3 +1,5 @@
+import type { PictureAssets } from "../../../utils/assets.types.ts"
+
 export const Arrow: PictureAssets = {
 	attributes: {
 		src: "/images/header/arrow/arrow-desktop.svg"
