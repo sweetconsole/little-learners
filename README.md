@@ -27,7 +27,7 @@
 
 ## 🚀 Быстрый старт
 
-### 1. Клонирование
+### 1. Клонирование репозитория
 ```bash
 git clone https://github.com/sweetconsole/little-learners.git
 ```

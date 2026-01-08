@@ -5,6 +5,7 @@
 .card {
 	@include mixins.resize("border-radius", 12, 10, 10);
 
+	position: relative;
 	background-color: variables.$color-white;
 	border: 2px solid variables.$color-primary-15;
 }
@@ -19,4 +20,20 @@
 	@include adaptive.mobile {
 		box-shadow: 4px 4px 0 1px variables.$color-primary-15;
 	}
+}
+
+.icon_container {
+	@include mixins.resize("padding", 20, 16, 16);
+	@include mixins.resize("left", 30, 24, 24);
+	@include mixins.resize("border-radius", 12, 8, 8);
+
+	position: absolute;
+	top: -12.5%;
+	background-color: variables.$color-accent-90;
+	border: 2px solid variables.$color-primary-15;
+}
+
+.icon {
+	@include mixins.resize("width", 34, 24, 24);
+	@include mixins.resize("height", 34, 24, 24);
 }

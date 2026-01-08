@@ -9,6 +9,7 @@
 	background-color: variables.$color-white;
 	border: 2px solid variables.$color-primary-20;
 	border-radius: 8px;
+	transition: all .2s ease-in-out;
 
 	&:first-of-type {
 		order: 1;
@@ -17,6 +18,14 @@
 	&:nth-last-child(1) {
 		order: 3;
 		rotate: 180deg;
+	}
+
+	&:hover {
+		background-color: variables.$color-accent-80;
+	}
+
+	&:active {
+		background-color: variables.$color-accent-70;
 	}
 
 	@include adaptive.mobile {

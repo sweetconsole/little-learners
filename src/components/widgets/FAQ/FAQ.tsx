@@ -1,18 +1,15 @@
 import { type FC, useState } from "react"
-import {
-	Section,
-	Footnote,
-	Title,
-	Description,
-	Container,
-	CardListItem
-} from "../../shared"
+import { Section, Footnote, Title, Description, Container } from "../../shared"
+import AccordionItem from "./AccordionItem/AccordionItem.tsx"
 import { answers } from "./faq.data.ts"
 import styles from "./FAQ.module.scss"
-import clsx from "clsx"
 
 const Faq: FC = () => {
 	const [selected, setSelected] = useState<number | null>(0)
+
+	const midIndex = Math.ceil(answers.length / 2)
+	const leftColumn = answers.slice(0, midIndex)
+	const rightColumn = answers.slice(midIndex)
 
 	const toggle = (id: number) => {
 		if (selected === id) return setSelected(null)
@@ -30,40 +27,28 @@ const Faq: FC = () => {
 				informed decisions for your child's education.
 			</Description>
 
-			<Container className={styles.accordion}>
-				{answers.map((answer, index) => (
-					<CardListItem
-						className={clsx(
-							selected == index && styles.item_active,
-							styles.item
-						)}
-						key={index}
-						onClick={() => toggle(index)}
-					>
-						<div className={styles.content}>
-							<div className={styles.question}>
-								<h3 className={styles.title}>{answer.question}</h3>
-							</div>
-							<div
-								className={clsx(
-									selected == index && styles.answer_active,
-									styles.answer
-								)}
-							>
-								<div className={styles.line}></div>
-								<p className={styles.text}>{answer.answer}</p>
-							</div>
-						</div>
+			<Container className={styles.container}>
+				<div className={styles.accordion}>
+					{leftColumn.map((answer, index) => (
+						<AccordionItem
+							selectedIndex={selected}
+							currentIndex={index}
+							onClick={() => toggle(index)}
+							{...answer}
+						/>
+					))}
+				</div>
 
-						<button
-							className={clsx(
-								selected == index && styles.button_active,
-								styles.button
-							)}
-							aria-label="Show answer"
-						></button>
-					</CardListItem>
-				))}
+				<div className={styles.accordion}>
+					{rightColumn.map((answer, index) => (
+						<AccordionItem
+							selectedIndex={selected}
+							currentIndex={index + midIndex}
+							onClick={() => toggle(index + midIndex)}
+							{...answer}
+						/>
+					))}
+				</div>
 			</Container>
 		</Section>
 	)

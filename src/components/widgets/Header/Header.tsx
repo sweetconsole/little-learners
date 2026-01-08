@@ -1,12 +1,14 @@
 import { type FC } from "react"
 import { Link, useLocation } from "react-router-dom"
 import clsx from "clsx"
+import { useScrollPosition } from "../../../hooks/useScrollPosition.tsx"
 import { Picture } from "../../shared"
 import { links, Logo } from "./header.data.ts"
 import styles from "./Header.module.scss"
 
 const Header: FC = () => {
 	const location = useLocation()
+	const scrollPosition = useScrollPosition()
 
 	const stylesLink = (link: string, select: boolean) => {
 		if (select) {
@@ -16,7 +18,12 @@ const Header: FC = () => {
 	}
 
 	return (
-		<header className={styles.header}>
+		<header
+			className={clsx(
+				scrollPosition >= 120 && styles.header_active,
+				styles.header
+			)}
+		>
 			<div className={styles.logo}>
 				<Picture className={styles.logo_image} assets={Logo} />
 			</div>
