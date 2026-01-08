@@ -1,5 +1,6 @@
 @use "../../../styles/variables";
 @use "../../../styles/mixins";
+@use "../../../styles/adaptive";
 
 .banner {
 	@include mixins.resize("padding-top", 150, 100, 50);
@@ -26,4 +27,8 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
+
+	@include adaptive.mobile {
+		grid-template-columns: 1fr;
+	}
 }
