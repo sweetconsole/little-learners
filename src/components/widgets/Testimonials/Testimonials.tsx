@@ -1,6 +1,6 @@
 import { type FC } from "react"
 import { useQuery } from "@tanstack/react-query"
-import { Section, Footnote, Title, Subtitle } from "../../shared"
+import { Section, Footnote, Title, Description } from "../../shared"
 import { supabase } from "../../../utils/supabase.ts"
 import { shuffledArray } from "../../../utils/shuffledArray.method.ts"
 import TestimonialsSwiper from "./TestimonialsSwiper/TestimonialsSwiper.tsx"
@@ -33,10 +33,10 @@ const Testimonials: FC = () => {
 		<Section id="testimonials">
 			<Footnote title="Their Happy Words 🤗" />
 			<Title>Our Testimonials</Title>
-			<Subtitle>
+			<Description>
 				Our testimonials are heartfelt reflections of the nurturing environment
 				we provide, where children flourish both academically and emotionally.
-			</Subtitle>
+			</Description>
 
 			<TestimonialsSwiper
 				testimonials={

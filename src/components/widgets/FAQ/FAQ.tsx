@@ -3,7 +3,7 @@ import {
 	Section,
 	Footnote,
 	Title,
-	Subtitle,
+	Description,
 	Container,
 	CardListItem
 } from "../../shared"
@@ -24,11 +24,11 @@ const Faq: FC = () => {
 		<Section id="faq">
 			<Footnote title="Solutions For The Doubts" />
 			<Title>Frequently Asked Questions</Title>
-			<Subtitle>
+			<Description>
 				Find all the essential information you need in our FAQ section, designed
 				to address the most frequently asked questions and help you make
 				informed decisions for your child's education.
-			</Subtitle>
+			</Description>
 
 			<Container className={styles.accordion}>
 				{answers.map((answer, index) => (

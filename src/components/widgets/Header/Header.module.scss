@@ -41,32 +41,24 @@
   }
 }
 
-.link,
-.link_selected,
-.link_accent {
-  @include mixins.resize("padding-top", 20, 20, 20);
-  @include mixins.resize("padding-bottom", 20, 20, 20);
-  @include mixins.resize("padding-left", 34, 30, 30);
-  @include mixins.resize("padding-right", 34, 30, 30);
-
+.link {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: variables.$font-family-primary;
+  font-weight: variables.$font-weight-medium;
+  line-height: 150%;
+  color: variables.$color-primary-15;
   cursor: pointer;
   border-left: 2px solid variables.$color-primary-15;
   transition: all .2s ease-in-out;
 
-  a {
-    @include mixins.resize("font-size", 20, 16, 14);
+  @include mixins.resize("padding-top", 20, 20, 20);
+  @include mixins.resize("padding-bottom", 20, 20, 20);
+  @include mixins.resize("padding-left", 34, 30, 30);
+  @include mixins.resize("padding-right", 34, 30, 30);
+  @include mixins.resize("font-size", 20, 16, 14);
 
-    font-family: variables.$font-family-primary;
-    font-weight: variables.$font-weight-medium;
-    line-height: 150%;
-    color: variables.$color-primary-15;
-  }
-}
-
-.link {
   &:hover {
     background-color: variables.$color-accent-95;
   }
@@ -76,11 +68,11 @@
   }
 }
 
-.link_selected {
+.link_active {
   background-color: variables.$color-accent-95;
 }
 
-.link_accent {
+.link_selected {
   @include mixins.resize("border-top-right-radius", 5, 3, 3);
   @include mixins.resize("border-bottom-right-radius", 5, 3, 3);
 

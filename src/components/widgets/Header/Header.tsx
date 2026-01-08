@@ -1,19 +1,18 @@
 import { type FC } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { pagesConfig } from "../../../utils/pages.config.ts"
+import clsx from "clsx"
 import { Picture } from "../../shared"
-import { Logo } from "./header.data.ts"
+import { links, Logo } from "./header.data.ts"
 import styles from "./Header.module.scss"
 
 const Header: FC = () => {
 	const location = useLocation()
 
-	const getStyleLink = (link: string) => {
-		if (link == location.pathname) {
-			return styles.link_selected
+	const stylesLink = (link: string, select: boolean) => {
+		if (select) {
+			return clsx(styles.link_selected, styles.link)
 		}
-
-		return styles.link
+		return clsx(link == location.pathname && styles.link_active, styles.link)
 	}
 
 	return (
@@ -23,24 +22,15 @@ const Header: FC = () => {
 			</div>
 
 			<nav className={styles.navigation}>
-				<div className={getStyleLink(pagesConfig.home)}>
-					<Link to={pagesConfig.home}>Home</Link>
-				</div>
-				<div className={getStyleLink(pagesConfig.about)}>
-					<Link to={pagesConfig.about}>About Us</Link>
-				</div>
-				<div className={getStyleLink(pagesConfig.academics)}>
-					<Link to={pagesConfig.academics}>Academics</Link>
-				</div>
-				<div className={getStyleLink(pagesConfig.admissions)}>
-					<Link to={pagesConfig.admissions}>Admissions</Link>
-				</div>
-				<div className={getStyleLink(pagesConfig.studentLife)}>
-					<Link to={pagesConfig.studentLife}>Student Life</Link>
-				</div>
-				<div className={styles.link_accent}>
-					<Link to={pagesConfig.contact}>Contact</Link>
-				</div>
+				{links.map((link, index) => (
+					<Link
+						className={stylesLink(link.path, link.select)}
+						to={link.path}
+						key={index}
+					>
+						{link.label}
+					</Link>
+				))}
 			</nav>
 
 			<div className={styles.menu}>

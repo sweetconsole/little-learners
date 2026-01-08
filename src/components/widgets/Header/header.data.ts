@@ -1,4 +1,44 @@
 import type { PictureAssets } from "../../../utils/assets.types.ts"
+import { pagesConfig } from "../../../utils/pages.config.ts"
+
+type Link = {
+	path: string
+	label: string
+	select: boolean
+}
+
+export const links: Array<Link> = [
+	{
+		path: pagesConfig.home,
+		label: "Home",
+		select: false
+	},
+	{
+		path: pagesConfig.about,
+		label: "About Us",
+		select: false
+	},
+	{
+		path: pagesConfig.academics,
+		label: "Academics",
+		select: false
+	},
+	{
+		path: pagesConfig.admissions,
+		label: "Admissions",
+		select: false
+	},
+	{
+		path: pagesConfig.studentLife,
+		label: "Student Life",
+		select: false
+	},
+	{
+		path: pagesConfig.contact,
+		label: "Contact",
+		select: true
+	}
+]
 
 export const Logo: PictureAssets = {
 	attributes: {
@@ -11,22 +51,6 @@ export const Logo: PictureAssets = {
 		},
 		{
 			srcSet: "/images/header/logo/logo-laptop.svg",
-			media: "(max-width: 1439px)"
-		}
-	]
-}
-
-export const Arrow: PictureAssets = {
-	attributes: {
-		src: "/images/header/arrow/arrow-desktop.svg"
-	},
-	sources: [
-		{
-			srcSet: "/images/header/arrow/arrow-mobile.svg",
-			media: "(max-width: 767px)"
-		},
-		{
-			srcSet: "/images/header/arrow/arrow-laptop.svg",
 			media: "(max-width: 1439px)"
 		}
 	]

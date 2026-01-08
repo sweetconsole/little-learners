@@ -1,1 +1,6 @@
+export { default as About } from "./About.tsx"
+export { default as Academics } from "./Academics.tsx"
+export { default as Admission } from "./Admission.tsx"
+export { default as Contact } from "./Contact.tsx"
 export { default as Home } from "./Home.tsx"
+export { default as StudentLife } from "./StudentLife.tsx"

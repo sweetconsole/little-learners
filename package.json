@@ -26,6 +26,7 @@
 		"eslint": "^9.39.1",
 		"eslint-plugin-react-hooks": "^7.0.1",
 		"eslint-plugin-react-refresh": "^0.4.24",
+		"framer-motion": "^12.24.10",
 		"globals": "^16.5.0",
 		"prettier": "^3.7.4",
 		"react-router-dom": "^7.10.1",

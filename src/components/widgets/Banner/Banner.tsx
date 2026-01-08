@@ -1,14 +1,16 @@
 import { type FC } from "react"
+import { Link } from "react-router-dom"
 import { Picture } from "../../shared"
-import { Arrow } from "../Header/header.data.ts"
+import { pagesConfig } from "../../../utils/pages.config.ts"
+import { Arrow } from "./banner.data.ts"
 import styles from "./Banner.module.scss"
 
 const Banner: FC = () => {
 	return (
-		<div className={styles.banner}>
+		<Link className={styles.banner} to={pagesConfig.admissions}>
 			<p className={styles.text}>Admission is Open, Grab your seat now</p>
 			<Picture className={styles.arrow} assets={Arrow} />
-		</div>
+		</Link>
 	)
 }
 
