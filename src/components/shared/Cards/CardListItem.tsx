@@ -1,19 +1,28 @@
-import { type FC } from "react"
+import { type ReactNode } from "react"
 import clsx from "clsx"
 import type { CardListItemProps } from "./card.interface.ts"
+import { Picture } from "../../shared"
 import styles from "./Card.module.scss"
-import { Picture } from "../index.ts"
 
-const CardListItem: FC<CardListItemProps> = ({
+interface Props {
+	children: ReactNode
+}
+
+const CardListItem = ({
 	children,
 	className,
 	shadow,
 	onClick,
 	icon
-}) => {
+}: CardListItemProps) => {
 	return (
 		<div
-			className={clsx(className, shadow && styles.shadow, styles.card)}
+			className={clsx(
+				className,
+				shadow && styles.shadow,
+				styles.icon_card,
+				styles.card
+			)}
 			onClick={onClick}
 		>
 			{icon && (
@@ -25,5 +34,13 @@ const CardListItem: FC<CardListItemProps> = ({
 		</div>
 	)
 }
+
+CardListItem.Title = ({ children }: Props) => (
+	<h3 className={styles.title}>{children}</h3>
+)
+
+CardListItem.Description = ({ children }: Props) => (
+	<p className={styles.description}>{children}</p>
+)
 
 export default CardListItem

@@ -94,23 +94,23 @@ export const navigation: Array<Link[]> = [
 		},
 		{
 			title: "Our Mission",
-			link: pagesConfig.about
+			link: `${pagesConfig.about}#mission-and-visions`
 		},
 		{
-			title: "Our Vission",
-			link: pagesConfig.about
+			title: "Our Vision",
+			link: `${pagesConfig.about}#mission-and-visions`
 		},
 		{
-			title: "Awards and Recognitions",
-			link: pagesConfig.about
+			title: "AwardsAndRecognitions and Recognitions",
+			link: `${pagesConfig.about}#awards`
 		},
 		{
 			title: "History",
-			link: pagesConfig.about
+			link: `${pagesConfig.about}#history`
 		},
 		{
 			title: "Teachers",
-			link: pagesConfig.about
+			link: `${pagesConfig.about}#teachers`
 		}
 	],
 	[

@@ -1,3 +1,4 @@
+export { default as Awards } from "./Awards/Awards.tsx"
 export { default as Banner } from "./Banner/Banner.tsx"
 export { default as Benefits } from "./Benefits/Benefits.tsx"
 export { default as FAQ } from "./FAQ/FAQ.tsx"

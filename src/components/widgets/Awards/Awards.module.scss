@@ -1,0 +1,10 @@
+@use "../../../styles/variables";
+@use "../../../styles/mixins";
+@use "../../../styles/adaptive";
+
+.awards {
+	@include mixins.resize("gap", 40, 30, 30);
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}

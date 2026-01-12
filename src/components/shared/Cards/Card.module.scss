@@ -22,6 +22,15 @@
 	}
 }
 
+.icon_card {
+	@include mixins.resize("padding-top", 80, 60, 50);
+	@include mixins.resize("padding-left", 50, 40, 30);
+	@include mixins.resize("padding-right", 50, 40, 40);
+	@include mixins.resize("padding-bottom", 50, 40, 30);
+
+	text-align: left;
+}
+
 .icon_container {
 	@include mixins.resize("padding", 20, 16, 16);
 	@include mixins.resize("left", 30, 24, 24);
@@ -36,4 +45,23 @@
 .icon {
 	@include mixins.resize("width", 34, 24, 24);
 	@include mixins.resize("height", 34, 24, 24);
+}
+
+.title {
+	@include mixins.resize("margin-bottom", 20, 16, 16);
+	@include mixins.resize("font-size", 28, 24, 22);
+
+	font-family: variables.$font-family-secondary;
+	font-weight: variables.$font-weight-bold;
+	line-height: 130%;
+	color: variables.$color-primary-10;
+}
+
+.description {
+	@include mixins.resize("font-size", 20, 16, 16);
+
+	font-family: variables.$font-family-primary;
+	font-weight: variables.$font-weight-medium;
+	line-height: 150%;
+	color: variables.$color-primary-30;
 }

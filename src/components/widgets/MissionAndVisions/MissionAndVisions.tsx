@@ -14,7 +14,7 @@ import clsx from "clsx"
 
 const MissionAndVisions: FC = () => {
 	return (
-		<Section id="missionAndVisions">
+		<Section id="mission-and-visions">
 			<Footnote title="Mission & Visions" />
 			<Title>Our Mission & Visions</Title>
 			<Description>

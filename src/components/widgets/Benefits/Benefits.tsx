@@ -4,10 +4,10 @@ import {
 	Footnote,
 	Title,
 	Description,
-	ContainerList
+	ContainerList,
+	CardListItem
 } from "../../shared"
 import { benefits } from "./benefits.data.ts"
-import Benefit from "./Benefit/Benefit.tsx"
 import styles from "./Benefits.module.scss"
 
 const Benefits: FC = () => {
@@ -23,7 +23,12 @@ const Benefits: FC = () => {
 
 			<ContainerList className={styles.benefits}>
 				{benefits.map((benefit, index) => (
-					<Benefit key={index} {...benefit} />
+					<CardListItem icon={benefit.icon} shadow key={index}>
+						<CardListItem.Title>{benefit.title}</CardListItem.Title>
+						<CardListItem.Description>
+							{benefit.description}
+						</CardListItem.Description>
+					</CardListItem>
 				))}
 			</ContainerList>
 		</Section>

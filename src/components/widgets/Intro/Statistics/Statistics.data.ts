@@ -15,7 +15,7 @@ export const statistics: Array<Statistic> = [
 	},
 	{
 		value: 37,
-		title: "Awards & Recognitions",
+		title: "AwardsAndRecognitions & Recognitions",
 		type: "value"
 	},
 	{
